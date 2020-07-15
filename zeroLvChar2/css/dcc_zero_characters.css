@@ -176,7 +176,7 @@ Character 1
 
 #birthAugur0, #birthAugur1, #birthAugur2, #birthAugur3{
     position: absolute;
-    top: 165px;
+    top: 160px;
     left:  335px;
 	width: 120px;
     font-size: 0.85em;
@@ -197,23 +197,6 @@ Character 1
 	font-size: 1em;
 }
 
-/*
-#baseAC0, #baseAC1, #baseAC2, #baseAC3{
-	position: absolute;
-    top: 114px;
-    left: 80px;
-	font-size: 1.5em;
-}
-
-
-#modifiedAC0, #modifiedAC1, #modifiedAC2, #modifiedAC3{
-	position: absolute;
-    top: 112px;
-    left: 35px;
-	font-size: 1.5em;
-}*/
-
-
 #hitPoints0, #hitPoints1, #hitPoints2, #hitPoints3{
 	position: absolute;
     top: 202px;
@@ -224,23 +207,23 @@ Character 1
 
 #ref0, #ref1, #ref2, #ref3{
     position: absolute;
-    top: 350px;
-    left:  190px;
-	font-size: 1.4em;
+    top: 48px;
+    left: 395px;
+	font-size: 1.3em;
 }
 
 #fort0, #fort1, #fort2, #fort3{
     position: absolute;
-    top: 378px;
-    left:  190px;
-	font-size: 1.4em;
+    top: 48px;
+    left: 442px;
+	font-size: 1.3em;
 }
 
 #will0, #will1, #will2, #will3{
     position: absolute;
-    top: 406px;
-    left:  190px;
-	font-size: 1.4em;
+    top: 103px;
+    left: 398px;
+	font-size: 1.3em;
 }
 
 
@@ -277,8 +260,8 @@ Character 1
 
 #speed0, #speed1, #speed2, #speed3{
     position: absolute;
-    top: 421px;
-    left: 95px;
+    top: 103px;
+    left: 445px;
 	font-size: 1.3em;
 }
 
@@ -320,9 +303,9 @@ Character 1
 
 #fumbleDie0, #fumbleDie1, #fumbleDie2, #fumbleDie3{
     position: absolute;
-    top: 415px;
-    left: 365px;
-	font-size: 1em;
+    top: 110px;
+    left: 340px;
+	font-size: 1.2em;
 }
 
 
@@ -337,26 +320,25 @@ Character 1
 
 #weapons0, #weapons1, #weapons2, #weapons3{
     position: absolute;
-    top: 195px;
-    left:  255px;
-	font-size: 0.9em;
+    top: 280px;
+    left:  230px;
+	font-size: 0.8em;
     width: 150px;
 }
 
 #weaponDamage0, #weaponDamage1, #weaponDamage2, #weaponDamage3{
     position: absolute;
-    top: 195px;
-    left:  448px;
-	font-size: 0.9em;
+    top: 280px;
+    left:  400px;
+	font-size: 0.8em;
 }
 
 
 #armour0, #armour1, #armour2, #armour3{
     position: absolute;
-    top: 235px;
-    left:  255px;
-	font-size: 0.9em;
-    width: 150px;
+    top: 320px;
+    left:  225px;
+	font-size: 0.8em;
 }
 
 #acBonus0, #acBonus1, #acBonus2, #acBonus3{
@@ -376,18 +358,18 @@ Character 1
 
 #equipment0, #equipment1, #equipment2, #equipment3{
     position: absolute;
-    top: 273px;
-    left:  255px;
-	font-size: 0.9em;
+    top: 365px;
+    left:  225px;
+	font-size: 0.8em;
 }
 
 
 
 #tradeGood0, #tradeGood1, #tradeGood2, #tradeGood3{
     position: absolute;
-    top: 288px;
-    left:  255px;
-	font-size: 0.9em;
+    top: 380px;
+    left:  225px;
+	font-size: 0.8em;
 }
 
 
