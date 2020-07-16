@@ -5,7 +5,7 @@
       
       function getBaseLanguages(species, intelligence) {
           
-          let baseLanguage = "Common";
+          var baseLanguage = "Common";
           
           if(species === "Dwarf" && intelligence >=8){
               baseLanguage = "Common, Dwarven";
@@ -164,7 +164,7 @@ the character received per level from their Stamina modifier and whether they ha
 */
 	  
 function hitPointAdjustPerLevel (luckySign, luckModifier) {
-   let adjust = 0;
+   var adjust = 0;
     if (luckySign != undefined && luckySign.luckySign === "Bountiful Harvest"){
         adjust = luckModifier;
      }
@@ -175,7 +175,7 @@ function hitPointAdjustPerLevel (luckySign, luckModifier) {
  getBaseArmourClass(agilityModifier)- returns the base armour class of the character
 */
 function getBaseArmourClass(agilityModifier){
-	let armourClass = 10;
+	var armourClass = 10;
 	baseArmourClass = armourClass + agilityModifier;
 	return baseArmourClass;
 }	  
@@ -224,7 +224,7 @@ function rangeAdjust (luckySign, luckModifier) {
 getSpeed (species) returns the base speed of the character based on their genotype
 */
 function getSpeed (species) {
-	let speed = 30;
+	var speed = 30;
     
 	if(species == "Dwarf" || species == "Halfling" ) {
 		speed = 20;
@@ -400,13 +400,13 @@ addRaceAbilities (occupations) - adds a special abilities designed if the charac
 function addRaceAbilities (occupations) {
 	var raceAbilities = "";
 	if (occupations.race === "Dwarf") {
-		raceAbilities = "Special Abilities: Infravision (60'), smell gold and gems";
+		raceAbilities = "Special Abilities: Infravision (60'), smell gold and gems.<br/><br/>";
 	}	
 	else if (occupations.race === "Elf") {
-		raceAbilities = "Special Abilities: Infravision (60'), iron vulnerability, +4 bonus to detect secret doors";
+		raceAbilities = "Special Abilities: Infravision (60'), iron vulnerability, +4 bonus to detect secret doors.<br/><br/>";
 	}	
 	else if (occupations.race === "Halfling") {
-		raceAbilities = "Special Abilities: Infravision (30'),  two-weapon fighting, good luck charm";
+		raceAbilities = "Special Abilities: Infravision (30'),  two-weapon fighting, good luck charm.<br/><br/>";
 	}
 	return raceAbilities;
 }
@@ -431,7 +431,7 @@ function addSign (modifier) {
 meleeDamageAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attack based on whether the character possesses specific Lucky Signs
 */
 function meleeDamageAdjust (luckySign, luckModifier) {
-   let adjust = 0;
+   var adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "Born on the battlefield"){
         adjust = luckModifier;
      }
@@ -446,7 +446,7 @@ function meleeDamageAdjust (luckySign, luckModifier) {
 rangeDamageAdjust (luckySign, luckModifier) - adds bonus/penality to Melee attack based on whether the character possesses specific Lucky Signs
 */
 function rangeDamageAdjust (luckySign, luckModifier) {
-   let adjust = 0;
+   var adjust = 0;
     if (luckySign.luckySign != undefined && luckySign.luckySign === "Born on the battlefield"){
         adjust = luckModifier;
      }
@@ -459,7 +459,7 @@ function rangeDamageAdjust (luckySign, luckModifier) {
 //select weapon damage type
 function damageAdjustSelect (occupation, meleeDamage, rangeDamage)
 {
-    let damageBonus = meleeDamage;
+    var damageBonus = meleeDamage;
     
     if(occupation.trainedWeapon == "Quill (as Dart)")
         {

@@ -89,88 +89,88 @@ Character 1
 
 #strength0, #strength1, #strength2, #strength3{
     position:absolute;
-    top: 162px;
-    left: 130px;
-	font-size: 1.5em;
+    top: 270px;
+    left: 120px;
+	font-size: 1.3em;
 }
 
 #strengthMod0, #strengthMod1, #strengthMod2, #strengthMod3{
     position:absolute;
-    top: 162px;
-    left: 170px;
-	font-size: 1.5em;
+    top: 270px;
+    left: 150px;
+	font-size: 1.3em;
 }
 
 #agility0, #agility1, #agility2, #agility3{
     position:absolute;
-    top: 190px;
-    left: 130px;
-	font-size: 1.5em;
+    top: 294px;
+    left: 120px;
+	font-size: 1.3em;
 }
 
 #agilityMod0, #agilityMod1, #agilityMod2, #agilityMod3{
     position:absolute;
-    top: 190px;
-    left: 170px;
-	font-size: 1.5em;
+    top: 294px;
+    left: 150px;
+	font-size: 1.3em;
 }
 
 #stamina0, #stamina1, #stamina2, #stamina3{
     position:absolute;
-    top: 218px;
-    left: 130px;
-	font-size: 1.5em;
+    top: 320px;
+    left: 120px;
+	font-size: 1.3em;
 }
 
 #staminaMod0, #staminaMod1, #staminaMod2, #staminaMod3{
     position:absolute;
-    top: 218px;
-    left: 170px;
-	font-size: 1.5em;
+    top: 320px;
+    left: 150px;
+	font-size: 1.3em;
 }
 
 #personality0, #personality1, #personality2, #personality3{
     position:absolute;
-    top: 246px;
-    left: 130px;
-	font-size: 1.5em;
+    top: 348px;
+    left: 120px;
+	font-size: 1.3em;
 }
 
 #personalityMod0, #personalityMod1, #personalityMod2, #personalityMod3{
     position:absolute;
-    top: 246px;
-    left: 170px;
-	font-size: 1.5em;
+    top: 348px;
+    left: 150px;
+	font-size: 1.3em;
 }
 
 #intelligence0, #intelligence1, #intelligence2, #intelligence3{
     position:absolute;
-    top: 274px;
-    left: 130px;
-	font-size: 1.5em;
+    top: 375px;
+    left: 120px;
+	font-size: 1.3em;
 }
 
 #intelligenceMod0, #intelligenceMod1, #intelligenceMod2, #intelligenceMod3{
     position:absolute;
-    top: 274px;
-    left: 170px;
-	font-size: 1.5em;
+    top: 375px;
+    left: 150px;
+	font-size: 1.3em;
 }
 
 
 
 #luck0, #luck1, #luck2, #luck3{
     position:absolute;
-    top: 302px;
-    left: 130px;
-	font-size: 1.5em;
+    top: 403px;
+    left: 120px;
+	font-size: 1.3em;
 }
 
 #luckMod0, #luckMod1, #luckMod2, #luckMod3{
     position:absolute;
-    top: 302px;
-    left: 170px;
-	font-size: 1.5em;
+    top: 403px;
+    left: 150px;
+	font-size: 1.3em;
 }
 
 
@@ -235,27 +235,44 @@ Character 1
 	font-size: 1em;
 }
 
-#melee0, #melee1, #melee2, #melee3{
-    position: absolute;
-    top: 350px;
-    left: 95px;
-	font-size: 1.3em;
-}
-
-
-#range0, #range1, #range2, #range3{
-    position: absolute;
-    top: 373px;
-    left: 95px;
-	font-size: 1.3em;
-}
 
 #init0, #init1, #init2, #init3{
     position: absolute;
-    top: 397px;
-    left: 95px;
-	font-size: 1.3em;
+    top: 155px;
+    left: 255px;
+	font-size: 1.1em;
 }
+
+#melee0, #melee1, #melee2, #melee3{
+    position: absolute;
+    top: 188px;
+    left: 240px;
+	font-size: 1.1em;
+}
+
+
+#meleeDamage0, #meleeDamage1, #meleeDamage2, #meleeDamage3{
+    position: absolute;
+    top: 188px;
+    left: 270px;
+	font-size: 1.1em;
+}
+
+#range0, #range1, #range2, #range3{
+    position: absolute;
+    top: 210px;
+    left: 240px;
+	font-size: 1.1em;
+}
+
+
+#rangeDamage0, #rangeDamage1, #rangeDamage2, #rangeDamage3{
+    position: absolute;
+    top: 210px;
+    left: 270px;
+	font-size: 1.1em;
+}
+
 
 
 #speed0, #speed1, #speed2, #speed3{
@@ -265,29 +282,7 @@ Character 1
 	font-size: 1.3em;
 }
 
-#meleeDamage0, #meleeDamage1, #meleeDamage2, #meleeDamage3{
-    position: absolute;
-    top: 362px;
-    left: 140px;
-	font-size: 1.3em;
-}
 
-
-#rangeDamage0, #rangeDamage1, #rangeDamage2, #rangeDamage3{
-    position: absolute;
-    top: 385px;
-    left: 140px;
-	font-size: 1.3em;
-}
-
-
-
-#critDie0, #critDie1, #critDie2, #critDie3{
-    position: absolute;
-    top: 415px;
-    left: 300px;
-	font-size: 1em;
-}
 
 #critTable0, #critTable1, #critTable2, #critTable3{
     position: absolute;
@@ -303,8 +298,17 @@ Character 1
 
 #fumbleDie0, #fumbleDie1, #fumbleDie2, #fumbleDie3{
     position: absolute;
-    top: 110px;
+    top: 113px;
     left: 340px;
+	font-size: 1.2em;
+}
+
+
+
+#critDie0, #critDie1, #critDie2, #critDie3{
+    position: absolute;
+    top: 113px;
+    left: 260px;
 	font-size: 1.2em;
 }
 
@@ -381,6 +385,14 @@ Character 1
 }
 
 
+#notes0, #notes1, #notes2, #notes3{
+    position: absolute;
+    top: 460px;
+    left:  220px;
+	width: 210px;
+	font-size: 0.8em;
+}
+/*
 #animalCharacter0, #animalCharacter1, #animalCharacter2, #animalCharacter3{
     position: absolute;
     top: 505px;
@@ -398,3 +410,4 @@ Character 1
 	width: 210px;
 	font-size: 0.8em;
 }
+*/

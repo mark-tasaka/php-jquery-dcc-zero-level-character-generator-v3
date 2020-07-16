@@ -48,6 +48,11 @@
         $characterName1 = getCharacterName($sexOfCharacter1);
         $characterName2 = getCharacterName($sexOfCharacter2);
         $characterName3 = getCharacterName($sexOfCharacter3);
+
+        $characterSurname0 = getSurname();
+        $characterSurname1 = getSurname();
+        $characterSurname2 = getSurname();
+        $characterSurname3 = getSurname();
     
         if(isset($_POST["theCharacterName"]))
         {
@@ -83,7 +88,7 @@
            <?php
             if($nameOption == 0)
                {
-                    echo $characterName0;   
+                    echo $characterName0 . ' ' . $characterSurname0;   
                }
             else
             {
@@ -107,11 +112,6 @@
         
         <p id="armourClass0"> <span id="modifiedAC0"></span>(<span id="baseAC0"></span>)</p>
 
-        <!--
-        <span id="baseAC0"></span>
-           
-        <span id="modifiedAC0"></span>-->
-           
 		<span id="hitPoints0"></span> 
            
         <span id="ref0"></span>
@@ -145,7 +145,7 @@
            
            
 		<span id="critDie0"></span>
-		<span id="critTable0"></span>
+		<!--<span id="critTable0"></span>-->
            
            <span id="wealth0"></span>
            
@@ -167,10 +167,9 @@
            <span id="acBonus0"></span>
            <span id="armourFumble0"></span>
 		   <span id="dieRollMethod0"></span>
-           
-		<p id="animalCharacter0"><span id="animal0"></span><span id="farmAnimal0"></span></p>
-           
-           <span id="raceAbility0"></span>
+
+           <p id="notes0"><span id="raceAbility0"></span><span id="animal0"></span><span id="farmAnimal0"></span></p>
+
            <span id="damageBonus0"></span>
            	   
 		</aside>
@@ -181,7 +180,7 @@
            <?php
             if($nameOption == 0)
                {
-                    echo $characterName1;   
+                    echo $characterName1 . ' ' . $characterSurname1;   
                }
             else
             {
@@ -203,10 +202,6 @@
            
         <p id="armourClass1"> <span id="modifiedAC1"></span>(<span id="baseAC1"></span>)</p>
 
-<!--
-        <span id="baseAC1"></span>
-           
-        <span id="modifiedAC1"></span>-->
            
 		<span id="hitPoints1"></span> 
            
@@ -240,7 +235,7 @@
            </span>
            
 		<span id="critDie1"></span>
-		<span id="critTable1"></span>
+		<!--<span id="critTable1"></span>-->
            
                       
            <span id="wealth1"></span>
@@ -261,10 +256,10 @@
            <span id="armour1"></span>
            <span id="acBonus1"></span>
            <span id="armourFumble1"></span>
-		   <span id="dieRollMethod1"></span>
+           <span id="dieRollMethod1"></span>
            
-		<p id="animalCharacter1"><span id="animal1"></span><span id="farmAnimal1"></span></p>
-            <span id="raceAbility1"></span>
+           <p id="notes1"><span id="raceAbility1"></span><span id="animal1"></span><span id="farmAnimal1"></span></p>
+           
            
            <span id="damageBonus1"></span>
            	   
@@ -278,7 +273,7 @@
            <?php
             if($nameOption == 0)
                {
-                    echo $characterName2;   
+                    echo $characterName2 . ' ' . $characterSurname2;   
                }
             else
             {
@@ -300,10 +295,6 @@
           
         <p id="armourClass2"> <span id="modifiedAC2"></span>(<span id="baseAC2"></span>)</p>
 
-        <!--
-        <span id="baseAC2"></span>
-           
-        <span id="modifiedAC2"></span>-->
            
 		<span id="hitPoints2"></span> 
            
@@ -337,7 +328,7 @@
            </span>
            
 		<span id="critDie2"></span>
-		<span id="critTable2"></span>
+		<!--<span id="critTable2"></span>-->
            
                       
            <span id="wealth2"></span>
@@ -358,12 +349,16 @@
            <span id="armour2"></span>
            <span id="acBonus2"></span>
            <span id="armourFumble2"></span>
-		   <span id="dieRollMethod2"></span>
+           <span id="dieRollMethod2"></span>
            
+           
+           <p id="notes2"><span id="raceAbility2"></span><span id="animal2"></span><span id="farmAnimal2"></span></p>
+           
+           <!--
 		<p id="animalCharacter2"><span id="animal2"></span><span id="farmAnimal2"></span></p>
            
             <span id="raceAbility2"></span>
-           <span id="damageBonus2"></span>
+           <span id="damageBonus2"></span>-->
            	   
 		</aside>
        
@@ -374,7 +369,7 @@
            <?php
             if($nameOption == 0)
                {
-                    echo $characterName3;   
+                    echo $characterName3 . ' ' . $characterSurname3;   
                }
             else
             {
@@ -434,7 +429,7 @@
            </span>
            
 		<span id="critDie3"></span>
-		<span id="critTable3"></span>
+		<!--<span id="critTable3"></span>-->
                       
            <span id="wealth3"></span>
            
@@ -454,11 +449,15 @@
            <span id="armour3"></span>
            <span id="acBonus3"></span>
            <span id="armourFumble3"></span>
-		   <span id="dieRollMethod3"></span>
+           <span id="dieRollMethod3"></span>
            
+           
+           <p id="notes3"><span id="raceAbility3"></span><span id="animal3"></span><span id="farmAnimal3"></span></p>
+
+           <!--
 		<p id="animalCharacter3"><span id="animal3"></span><span id="farmAnimal3"></span></p>
            
-            <span id="raceAbility3"></span>
+            <span id="raceAbility3"></span>-->
            <span id="damageBonus3"></span>
            	   
 		</aside>
@@ -572,10 +571,12 @@
 			"fort": staminaModifier + adjustFort(birthAugur, getLuckModifier(luck)),
 			"will": personalityModifier + adjustWill(birthAugur, getLuckModifier(luck)),
 			"init": agilityModifier + adjustInit(birthAugur, getLuckModifier(luck)),
-			"melee": strengthModifier + meleeAdjust(birthAugur, getLuckModifier(luck)),
+            "melee": strengthModifier + meleeAdjust(birthAugur, getLuckModifier(luck)),
+            "meleeDamage": strengthModifier + meleeDamageAdjust(birthAugur, getLuckModifier(luck)),
 			"range": agilityModifier + rangeAdjust(birthAugur, getLuckModifier(luck)),
-			"critDie": "d4" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))),
-			"critTable": "I",
+			"rangeDamage": agilityModifier + rangeDamageAdjust(birthAugur, getLuckModifier(luck)),
+			"critDie": "d4" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))) + "/I",
+			//"critTable": "I",
             "baseLanguage": language,
             "addLanguages": bonusLanguages,
 			"speed": getSpeed(species) + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
@@ -828,12 +829,14 @@
           
           $("#init" + index).html(addModifierSign(data[index].init));
           $("#melee" + index).html(addModifierSign(data[index].melee));
+          $("#meleeDamage" + index).html(addModifierSign(data[index].meleeDamage));
           $("#range" + index).html(addModifierSign(data[index].range));
+          $("#rangeDamage" + index).html(addModifierSign(data[index].rangeDamage));
           
           $("#fumbleDie" + index).html(data[index].fumbleDie);
           
           $("#critDie" + index).html(data[index].critDie);
-          $("#critTable" + index).html(data[index].critTable);
+         // $("#critTable" + index).html(data[index].critTable);
           
           
           $("#baseLanguage" + index).html(data[index].baseLanguage);
