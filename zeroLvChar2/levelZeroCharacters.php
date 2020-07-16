@@ -30,6 +30,10 @@
     include 'php/characterSex.php';
     include 'php/characterName.php';
     include 'php/alignment.php';
+    include 'php/diceRoll.php';
+    include 'php/abilityScoreGen.php';
+    include 'php/abilityScoreMod.php';
+    include 'php/message.php';
     
         
         if(isset($_POST["theSex"]))
@@ -70,6 +74,32 @@
         $characterAlignment1 = getAlignment($alignOption);
         $characterAlignment2 = getAlignment($alignOption);
         $characterAlignment3 = getAlignment($alignOption);
+
+        
+        if(isset($_POST["theAbilityScore"]))
+        {
+            $abilityScoreGen = $_POST["theAbilityScore"];
+        
+        }
+
+        $abilityScoreArray = diceRollArray($abilityScoreGen);
+
+        $dieRollMessage = dieRollMethodText($abilityScoreGen);
+
+        $strength = $abilityScoreArray[0];
+        $agility = $abilityScoreArray[1];
+        $stamina = $abilityScoreArray[2];
+        $personality = $abilityScoreArray[3];
+        $intelligence = $abilityScoreArray[4];
+        $luck = $abilityScoreArray[5];
+        
+        $strengthMod = abilityScoreModifier($strength);
+        $agilityMod = abilityScoreModifier($agility);
+        $staminaMod = abilityScoreModifier($stamina);
+        $personalityMod = abilityScoreModifier($personality);
+        $intelligenceMod = abilityScoreModifier($intelligence);
+        $luckMod = abilityScoreModifier($luck);
+
     
     
     ?>
@@ -166,7 +196,13 @@
            <span id="armour0"></span>
            <span id="acBonus0"></span>
            <span id="armourFumble0"></span>
-		   <span id="dieRollMethod0"></span>
+		   <span id="dieRollMethod0"> 
+           <?php
+            
+            echo $dieRollMessage;
+            
+            ?> 
+            </span>
 
            <p id="notes0"><span id="raceAbility0"></span><span id="animal0"></span><span id="farmAnimal0"></span></p>
 
@@ -256,7 +292,13 @@
            <span id="armour1"></span>
            <span id="acBonus1"></span>
            <span id="armourFumble1"></span>
-           <span id="dieRollMethod1"></span>
+           <span id="dieRollMethod1">
+           <?php
+            
+            echo $dieRollMessage;
+            
+            ?> 
+            </span>
            
            <p id="notes1"><span id="raceAbility1"></span><span id="animal1"></span><span id="farmAnimal1"></span></p>
            
@@ -328,7 +370,6 @@
            </span>
            
 		<span id="critDie2"></span>
-		<!--<span id="critTable2"></span>-->
            
                       
            <span id="wealth2"></span>
@@ -349,7 +390,13 @@
            <span id="armour2"></span>
            <span id="acBonus2"></span>
            <span id="armourFumble2"></span>
-           <span id="dieRollMethod2"></span>
+           <span id="dieRollMethod2">
+           <?php
+            
+            echo $dieRollMessage;
+            
+            ?> 
+            </span>
            
            
            <p id="notes2"><span id="raceAbility2"></span><span id="animal2"></span><span id="farmAnimal2"></span></p>
@@ -390,11 +437,6 @@
         
         <p id="armourClass3"> <span id="modifiedAC3"></span>(<span id="baseAC3"></span>)</p>
            
-        <!--
-        <span id="baseAC3"></span>
-           
-        <span id="modifiedAC3"></span>
-        -->
 
 		<span id="hitPoints3"></span> 
            
@@ -429,7 +471,6 @@
            </span>
            
 		<span id="critDie3"></span>
-		<!--<span id="critTable3"></span>-->
                       
            <span id="wealth3"></span>
            
@@ -449,15 +490,17 @@
            <span id="armour3"></span>
            <span id="acBonus3"></span>
            <span id="armourFumble3"></span>
-           <span id="dieRollMethod3"></span>
+           <span id="dieRollMethod3">
+           <?php
+            
+            echo $dieRollMessage;
+            
+            ?> 
+            </span>
            
            
            <p id="notes3"><span id="raceAbility3"></span><span id="animal3"></span><span id="farmAnimal3"></span></p>
 
-           <!--
-		<p id="animalCharacter3"><span id="animal3"></span><span id="farmAnimal3"></span></p>
-           
-            <span id="raceAbility3"></span>-->
            <span id="damageBonus3"></span>
            	   
 		</aside>
@@ -525,21 +568,36 @@
 	 Character() - Zero Level Character Constructor
 	*/
 	function Character() {
+
+        
+        let strength = <?php echo $strength ?>;
+        let	intelligence = <?php echo $intelligence ?>;
+        let	personality = <?php echo $personality ?>;
+        let agility = <?php echo $agility ?>;
+        let stamina = <?php echo $stamina ?>;
+        let	luck = <?php echo $luck ?>;
+        
+        let strengthModifier = <?php echo $strengthMod ?>;
+        let intelligenceModifier = <?php echo $intelligenceMod ?>;
+        let personalityModifier = <?php echo $personalityMod ?>;
+        let agilityModifier = <?php echo $agilityMod ?>;
+        let staminaModifier = <?php echo $staminaMod ?>;
+        let luckModifier = <?php echo $luckMod ?>;
 	
-    let strength = rollDice(6, 3, 0, 0);
+   /* let strength = rollDice(6, 3, 0, 0);
     let agility = rollDice(6, 3, 0, 0);
     let stamina = rollDice(6, 3, 0, 0);
     let	personality = rollDice(6, 3, 0, 0);
     let	intelligence = rollDice(6, 3, 0, 0);
-    let	luck = rollDice(6, 3, 0, 0);
+    let	luck = rollDice(6, 3, 0, 0);*/
 	let	profession = getOccupation();
 	let birthAugur = getLuckySign();
-	let strengthModifier = getStrengthModifier(strength);
+/*	let strengthModifier = getStrengthModifier(strength);
 	let staminaModifier = getStaminaModifier(stamina);
 	let agilityModifier = getAgilityModifier(agility);
 	let personalityModifier = getPersonalityModifier(personality);
 	let intelligenceModifier = getIntelligenceModifier(intelligence);
-    let luckModifier = getLuckModifier(luck);
+    let luckModifier = getLuckModifier(luck);*/
     let species = profession.race;
     let language = getBaseLanguages(species, intelligence, luckModifier, species);
     let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);
