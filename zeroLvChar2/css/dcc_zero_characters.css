@@ -192,9 +192,9 @@ Character 1
 
 #armourClass0, #armourClass1, #armourClass2, #armourClass3{
 	position: absolute;
-    top: 136px;
-    left: 92px;
-	font-size: 1em;
+    top: 130px;
+    left: 88px;
+	font-size: 1.2em;
 }
 
 #hitPoints0, #hitPoints1, #hitPoints2, #hitPoints3{
@@ -380,7 +380,7 @@ Character 1
 #dieRollMethod0, #dieRollMethod1, #dieRollMethod2, #dieRollMethod3{
     position: absolute;
     top: 592px;
-    left:  225px;
+    left:  208px;
 	font-size: 0.6em;
 }
 
@@ -392,22 +392,3 @@ Character 1
 	width: 210px;
 	font-size: 0.8em;
 }
-/*
-#animalCharacter0, #animalCharacter1, #animalCharacter2, #animalCharacter3{
-    position: absolute;
-    top: 505px;
-    left:  220px;
-	width: 210px;
-	font-size: 0.8em;
-}
-
-
-
-#raceAbility0, #raceAbility1, #raceAbility2, #raceAbility3{
-    position: absolute;
-    top: 470px;
-    left:  220px;
-	width: 210px;
-	font-size: 0.8em;
-}
-*/

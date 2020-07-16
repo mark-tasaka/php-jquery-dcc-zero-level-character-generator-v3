@@ -31,8 +31,6 @@
     include 'php/characterName.php';
     include 'php/alignment.php';
     include 'php/diceRoll.php';
-    include 'php/abilityScoreGen.php';
-    include 'php/abilityScoreMod.php';
     include 'php/message.php';
     
         
@@ -82,26 +80,79 @@
         
         }
 
-        $abilityScoreArray = diceRollArray($abilityScoreGen);
+        $diceSides = 0;
+        $diceRolled = 0;
+        $diceRemoved = 0;
+        $dieValueAdded = 0;
+        
+
+        if($abilityScoreGen == "1")
+        {
+            $diceSides = 6;
+            $diceRolled = 3;
+            $diceRemoved = 0;
+            $dieValueAdded = 0;
+        }
+
+        if($abilityScoreGen == "2")
+        {
+            $diceSides = 6;
+            $diceRolled = 4;
+            $diceRemoved = 1;
+            $dieValueAdded = 0;
+        }
+
+        if($abilityScoreGen == "3")
+        {
+            $diceSides = 6;
+            $diceRolled = 2;
+            $diceRemoved = 0;
+            $dieValueAdded = 6;
+        }
+
+        if($abilityScoreGen == "4")
+        {
+            $diceSides = 10;
+            $diceRolled = 1;
+            $diceRemoved = 0;
+            $dieValueAdded = 8;
+        }
+
+        if($abilityScoreGen == "5")
+        {
+            $diceSides = 6;
+            $diceRolled = 5;
+            $diceRemoved = 2;
+            $dieValueAdded = 0;
+        }
 
         $dieRollMessage = dieRollMethodText($abilityScoreGen);
 
-        $strength = $abilityScoreArray[0];
-        $agility = $abilityScoreArray[1];
-        $stamina = $abilityScoreArray[2];
-        $personality = $abilityScoreArray[3];
-        $intelligence = $abilityScoreArray[4];
-        $luck = $abilityScoreArray[5];
         
-        $strengthMod = abilityScoreModifier($strength);
-        $agilityMod = abilityScoreModifier($agility);
-        $staminaMod = abilityScoreModifier($stamina);
-        $personalityMod = abilityScoreModifier($personality);
-        $intelligenceMod = abilityScoreModifier($intelligence);
-        $luckMod = abilityScoreModifier($luck);
+        
+        if(isset($_POST["theHitPoints"]))
+        {
+            $hitPointsGen = $_POST["theHitPoints"];
+        
+        }
 
-    
-    
+        $hitPointsMessage = hitPointsMethodText($hitPointsGen);
+
+        $hitPoints = 0;
+
+        if($hitPointsGen == "1")
+        {
+            
+            $hitPoints = rand(1, 4);
+
+        }
+
+        if($hitPointsGen == "2")
+        {
+            
+            $hitPoints = 4;
+        }
+
     ?>
 
     
@@ -199,7 +250,7 @@
 		   <span id="dieRollMethod0"> 
            <?php
             
-            echo $dieRollMessage;
+            echo $dieRollMessage . $hitPointsMessage;
             
             ?> 
             </span>
@@ -295,7 +346,7 @@
            <span id="dieRollMethod1">
            <?php
             
-            echo $dieRollMessage;
+            echo $dieRollMessage . $hitPointsMessage;
             
             ?> 
             </span>
@@ -393,7 +444,7 @@
            <span id="dieRollMethod2">
            <?php
             
-            echo $dieRollMessage;
+            echo $dieRollMessage . $hitPointsMessage;
             
             ?> 
             </span>
@@ -401,12 +452,6 @@
            
            <p id="notes2"><span id="raceAbility2"></span><span id="animal2"></span><span id="farmAnimal2"></span></p>
            
-           <!--
-		<p id="animalCharacter2"><span id="animal2"></span><span id="farmAnimal2"></span></p>
-           
-            <span id="raceAbility2"></span>
-           <span id="damageBonus2"></span>-->
-           	   
 		</aside>
        
        
@@ -493,7 +538,7 @@
            <span id="dieRollMethod3">
            <?php
             
-            echo $dieRollMessage;
+            echo $dieRollMessage . $hitPointsMessage;
             
             ?> 
             </span>
@@ -569,35 +614,20 @@
 	*/
 	function Character() {
 
-        
-        let strength = <?php echo $strength ?>;
-        let	intelligence = <?php echo $intelligence ?>;
-        let	personality = <?php echo $personality ?>;
-        let agility = <?php echo $agility ?>;
-        let stamina = <?php echo $stamina ?>;
-        let	luck = <?php echo $luck ?>;
-        
-        let strengthModifier = <?php echo $strengthMod ?>;
-        let intelligenceModifier = <?php echo $intelligenceMod ?>;
-        let personalityModifier = <?php echo $personalityMod ?>;
-        let agilityModifier = <?php echo $agilityMod ?>;
-        let staminaModifier = <?php echo $staminaMod ?>;
-        let luckModifier = <?php echo $luckMod ?>;
-	
-   /* let strength = rollDice(6, 3, 0, 0);
-    let agility = rollDice(6, 3, 0, 0);
-    let stamina = rollDice(6, 3, 0, 0);
-    let	personality = rollDice(6, 3, 0, 0);
-    let	intelligence = rollDice(6, 3, 0, 0);
-    let	luck = rollDice(6, 3, 0, 0);*/
+    let strength = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
+    let agility = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
+    let stamina = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
+    let	personality = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
+    let	intelligence = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
+    let	luck = rollDice(<?php echo $diceSides ?>, <?php echo $diceRolled ?>, <?php echo $diceRemoved ?>, <?php echo $dieValueAdded ?>);
 	let	profession = getOccupation();
 	let birthAugur = getLuckySign();
-/*	let strengthModifier = getStrengthModifier(strength);
+	let strengthModifier = getStrengthModifier(strength);
 	let staminaModifier = getStaminaModifier(stamina);
 	let agilityModifier = getAgilityModifier(agility);
 	let personalityModifier = getPersonalityModifier(personality);
 	let intelligenceModifier = getIntelligenceModifier(intelligence);
-    let luckModifier = getLuckModifier(luck);*/
+    let luckModifier = getLuckModifier(luck);
     let species = profession.race;
     let language = getBaseLanguages(species, intelligence, luckModifier, species);
     let bonusLanguages = getBonusLanguages(intelligenceModifier, birthAugur);
@@ -607,7 +637,6 @@
     let acBonus = getArmourProtection(armour);
 		
 		let zeroLevelCharacter = {
-			//"name": "",
 			"strength": strength,
 			"agility": agility,
 			"stamina": stamina,
@@ -623,8 +652,8 @@
 			"profession":  profession.occupation,
 			"luckySign": birthAugur.luckySign,
 			"luckyRoll": birthAugur.luckyRoll,
-			"luckySignBonus": getLuckModifier(luck),
-			"hitPoints": Math.floor((Math.random() * 4) + 1) + staminaModifier + hitPointAdjustPerLevel(birthAugur,  getLuckModifier(luck)),
+            "luckySignBonus": getLuckModifier(luck),
+			"hitPoints": <?php echo $hitPoints ?> + staminaModifier + hitPointAdjustPerLevel(birthAugur,  getLuckModifier(luck)),
 			"ref": agilityModifier + adjustRef(birthAugur, getLuckModifier(luck)),
 			"fort": staminaModifier + adjustFort(birthAugur, getLuckModifier(luck)),
 			"will": personalityModifier + adjustWill(birthAugur, getLuckModifier(luck)),
@@ -634,7 +663,6 @@
 			"range": agilityModifier + rangeAdjust(birthAugur, getLuckModifier(luck)),
 			"rangeDamage": agilityModifier + rangeDamageAdjust(birthAugur, getLuckModifier(luck)),
 			"critDie": "d4" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))) + "/I",
-			//"critTable": "I",
             "baseLanguage": language,
             "addLanguages": bonusLanguages,
 			"speed": getSpeed(species) + addLuckToSpeed(birthAugur, getLuckModifier(luck)) + "'",
