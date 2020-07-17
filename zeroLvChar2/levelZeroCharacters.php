@@ -661,7 +661,7 @@
             "melee": strengthModifier + meleeAdjust(birthAugur, getLuckModifier(luck)),
             "meleeDamage": strengthModifier + meleeDamageAdjust(birthAugur, getLuckModifier(luck)),
 			"range": agilityModifier + rangeAdjust(birthAugur, getLuckModifier(luck)),
-			"rangeDamage": agilityModifier + rangeDamageAdjust(birthAugur, getLuckModifier(luck)),
+			"rangeDamage": rangeDamageAdjust(birthAugur, getLuckModifier(luck)),
 			"critDie": "d4" + addSign(adjustCrit(birthAugur, getLuckModifier(luck))) + "/I",
             "baseLanguage": language,
             "addLanguages": bonusLanguages,

@@ -5,15 +5,18 @@ function getSex ($characterSex)
     
     if($characterSex == 1)
     {
-        $sex = rand(1, 2);
-       // $sex = 1;
+        $sex = rand(1, 11);
+
         if($sex == 1)
         {
-            return 'Female';
+            return 'Other';
         }
-        else
+        else if($sex >= 2 && $sex <=6)
         {
              return 'Male';
+        }
+        else{
+            return 'Female';
         }
         
     }
@@ -24,6 +27,10 @@ function getSex ($characterSex)
     else if($characterSex == 3)
     {
         return 'Male';
+    }
+    else if($characterSex == 4)
+    {
+        return 'Other';
     }
     else
     {
