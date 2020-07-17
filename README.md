@@ -1,6 +1,9 @@
 # php-jquery-dcc-zero-level-character-generator-v3
 The Dungeon Crawl Classics Zero Level Character Generator (Version 3) has been designed primarily with PHP and jQuery. Several of the jQuery/JavaScript functions are stored in external files, as a means of creating greater design efficiency, with the goal of writing a program with high cohesion and low coupling. In this way, this program simulates Object-Oriented design. JSON is used to store multi-column variables, with jQuery functions used to retrieve these variables.
 
+
+Update 1.06 (July 17, 2020): Generator launch page and completed DCC Zero Level Character Generator uploaded.
+
 Update 1.05 (July 16, 2020): Removed abilityScoreMod.php and abilityScoreGen.php files removed, as these files are no longer needed.  Updates to zeroLevelCharacter.php and dcc_zero_characters.css.
 
 Update 1.04 (July 16, 2020): New files added: message.php, abilityScoreMod.php and diceRoll.php.  Updates to characterName.php, zeroLevelCharacter.php and dcc_zero_characters.css.
